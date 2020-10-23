@@ -1,18 +1,34 @@
 # IS7024 Movie Application
 ## Introduction
-Information about what this application does for users. 
-Describe your application, what it will do.
+
+How often you find a movie summary and think is good only to watch it and find out it is not as good? Does having popular actors/actresses in a movie makes it good? Our app will be a simple way for users to make decisions regarding their movie choices. 
+Users will be able to do the following:
+•	Search for movies ratings
+•	Search for movie showtimes
+•	Search for actors/actresses’ ratings
+•	Provide their own feedback regarding movies and actors
+
 
 ## Requirements
-As a user, I want [X] so that I can [Y]
-Given When Thens are optional.
+As a user, I want to be able to quickly search the ratings of a movie and the actors/actresses featured in it so that I can decide if I want to see it or not.
+Another way to decide what movie to watch will be by reviewing the top 10 rated movies in the app's ranking.
 
+Once the user has decided what movie they want to watch, the user will be able to get the movie showtimes within their area.
+
+Finally, the user will be able to provide their own rating for the movie they just watched.
 
 ## Data Sources
+
 ![Movie Database Image](https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg)
 The first data source we will be using is [The Movie Database - TMDb](https://www.themoviedb.org/documentation/api?language=en-US)
 
 TMDb is a community built movie and TV database. Every piece of data has been added by the community dating back to 2008. TMDb's strong international focus and breadth of data is largely unmatched and the API contains over 600k movies and 100k tv shows.
+
+
+Our second data souce will be [Fandango](https://developer.fandango.com/docs/read/Fandango).
+
+Fandango is the nation's leading moviegoer destination, sells tickets to nearly 20,000 screens nationwide. Through Fandango's API we can get real-time data via a web service accessible through REST (Representational State Transfer). The standard model of a web service is employed: a client makes a request through a REST URL and data is returned to the client as an XML-formatted stream of text.
+
 
 ### Example JSON snippet - Movie
 ```JSON
