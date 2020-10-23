@@ -3,9 +3,13 @@
 
 How often you find a movie summary and think is good only to watch it and find out it is not as good? Does having popular actors/actresses in a movie makes it good? Our app will be a simple way for users to make decisions regarding their movie choices. 
 Users will be able to do the following:
+
 •	Search for movies ratings
+
 •	Search for movie showtimes
+
 •	Search for actors/actresses’ ratings
+
 •	Provide their own feedback regarding movies and actors
 
 
