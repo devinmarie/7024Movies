@@ -50,7 +50,7 @@ Our second data souce will be [Fandango](https://developer.fandango.com/docs/rea
 Fandango is the nation's leading moviegoer destination, sells tickets to nearly 20,000 screens nationwide. Through Fandango's API we can get real-time data via a web service accessible through REST (Representational State Transfer). The standard model of a web service is employed: a client makes a request through a REST URL and data is returned to the client as an XML-formatted stream of text.
 
 ### Example of Model Information
-
+![Fandango Showtime Example](https://raw.githubusercontent.com/devinmarie/7024Movies/master/fandango_info.png)
 
 ### Main Models
 The main models we plan to inlcude are:
