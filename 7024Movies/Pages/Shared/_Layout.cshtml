@@ -9,20 +9,25 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm">
+            <div class="container justify-content-center">
+                <a asp-area="" asp-page="/Index"><img src="https://www.devinlally.com/uploads/6/0/5/4/60548821/favflick_orig.png" class="navbar-image-top" /></a>
+            </div>
+        </nav>
+    </header>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">_7024Movies</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1 justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-page="/Privacy"><h5>EXAMPLE1</h5></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-page="/Privacy"><h5>EXAMPLE2</h5></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Privacy"><h5>EXAMPLE3</h5></a>
                         </li>
                     </ul>
                 </div>
@@ -35,9 +40,12 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - _7024Movies - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer class="footer text-muted">
+        <div>
+            <img class="center" alt="imagebar" src="https://www.devinlally.com/uploads/6/0/5/4/60548821/favflick-bar_orig.png" />
+        </div>
+        <div class="container padbottom">
+            <h4 class="text-center">&copy; 2020 - FavFlick </h4>
         </div>
     </footer>
 
