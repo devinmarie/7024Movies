@@ -338,3 +338,9 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+#TMDb API Key
+TmdbApiKey.txt
+
+#IMDb API Key
+ImdbApiKey.txt
