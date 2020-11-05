@@ -72,12 +72,6 @@ namespace _7024Movies
                 Movie testMovie = Movie.FromJson(responseBody);
                 Console.WriteLine("IMDB Title: " + testMovie.ImdbId);
 
-                //uri = String.Format("https://imdb-api.com/en/API/Title/k_vxcfqztc/{0}",testMovie.ImdbId);
-                //response = await client.GetAsync(uri);
-                //response.EnsureSuccessStatusCode();
-                //responseBody = await response.Content.ReadAsStringAsync();
-                //ImdbMovie testIMDB = JsonConvert.DeserializeObject<ImdbMovie>(responseBody);
-
                 var apiLib = new ApiLib("");
                 var testIMDB = await apiLib.TitleAsync(testMovie.ImdbId, Language.en, "FullActor,FullCast,Posters,Images,Trailer,Ratings,Wikipedia");
 
