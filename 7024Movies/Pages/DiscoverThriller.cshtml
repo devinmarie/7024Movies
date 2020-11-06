@@ -1,0 +1,74 @@
+﻿@page
+@model _7024Movies.Pages.DiscoverThrillerModel
+@{
+    var thrillers = (DiscoverM.Result[])ViewData["Thrillers"];
+    List<MovieId.MovieIds> thrillerids = (List<MovieId.MovieIds>)ViewData["ThrillerLkp"];
+    //List<long> ids = (List<long>)ViewData["Ids"];
+
+}
+
+<div class="row padbottom">
+    <h3 class="text-center">Trending Thriller Movies</h3>
+    <table class="table">
+        <tr>
+            <th>Movie Title</th>
+            <th>Popularity</th>
+            <th>Vote Count</th>
+            <th>Vote Average</th>
+        </tr>
+        @{
+            foreach (DiscoverM.Result thriller in thrillers)
+            {
+                <tr>
+                    <td>@thriller.Title</td>
+                    <td>@thriller.Popularity</td>
+                    <td>@thriller.VoteCount</td>
+                    <td>@thriller.VoteAverage</td>
+                </tr>
+            }
+        }
+
+    </table>
+    <h3>Movie Lookup Info</h3>
+    <table class="table">
+        <tr>
+            <th>Movie ID</th>
+            <th>IMDB ID</th>
+        </tr>
+        @{
+            foreach (MovieId.MovieIds id in thrillerids)
+            {
+                <tr>
+                    <td>@id.Id</td>
+                    <td>@id.ImdbId</td>
+                </tr>
+            }
+        }
+
+    </table>
+    <h3>Merging the two together</h3>
+    <table class="table">
+        <tr>
+            <th>Movie ID</th>
+            <th>Movie Title</th>
+            <th>Movie IMDB ID</th>
+        </tr>
+        @{
+            foreach (MovieId.MovieIds thrillerid in thrillerids)
+            {
+                foreach (DiscoverM.Result thriller in thrillers)
+                {
+                    if (thrillerid.Id == thriller.Id)
+                    {
+                        <tr>
+                            <td>@thriller.Id</td>
+                            <td>@thriller.Title</td>
+                            <td>@thrillerid.ImdbId</td>
+                        </tr>
+                    }
+                }
+
+            }
+        }
+    </table>
+</div>

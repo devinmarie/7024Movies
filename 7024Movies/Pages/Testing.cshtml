@@ -1,5 +1,24 @@
 ﻿@page
 @model _7024Movies.Pages.TestingModel
 @{
+    var results = (_7024Movies.Result[]) ViewData["MovieResults"];
 }
-<p>Testing this new page and committing it.</p>
+
+<div>
+    <table>
+        <tr>
+            <th>MovieTitle</th>
+            <th>Popularity</th>
+        </tr>
+        @{ 
+           foreach (_7024Movies.Result result in results)
+            {
+                <tr>
+                    <td>@result.Title</td>
+                    <td>@result.Popularity</td>
+                </tr>
+            }
+        }
+
+    </table>
+</div>
