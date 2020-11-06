@@ -4,8 +4,8 @@
     var results = (_7024Movies.Result[]) ViewData["MovieResults"];
 }
 
-<div>
-    <table>
+<div class="row">
+    <table class="table">
         <tr>
             <th>MovieTitle</th>
             <th>Popularity</th>
@@ -21,4 +21,21 @@
         }
 
     </table>
+</div>
+<div class="row">
+    @{
+        foreach (_7024Movies.Result result in results.Take(20))
+        { 
+        <div class="card text-center" style="width: 15rem;">
+            <div class="card-body">
+                <h3 class="card-title">@result.Title</h3>
+                <p class="card-text">@result.ReleaseDate</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Popularity Score: @result.Popularity</li>
+                <li class="list-group-item">Vote Average: @result.VoteAverage</li>
+            </ul>
+        </div>
+        }
+    }
 </div>
