@@ -72,7 +72,7 @@ namespace _7024Movies
                 Movie testMovie = Movie.FromJson(responseBody);
                 Console.WriteLine("IMDB Title: " + testMovie.ImdbId);
 
-                var apiLib = new ApiLib("");
+                var apiLib = new ApiLib("k_vxcfqztc");
                 var testIMDB = await apiLib.TitleAsync(testMovie.ImdbId, Language.en, "FullActor,FullCast,Posters,Images,Trailer,Ratings,Wikipedia");
 
                 Console.WriteLine("Full Title: " + testIMDB.FullTitle);
