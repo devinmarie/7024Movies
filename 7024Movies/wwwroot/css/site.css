@@ -111,3 +111,7 @@ p {
 .padbottom {
     padding-bottom: 30px;
 }
+
+.card:hover {
+        filter: grayscale(20%);
+}

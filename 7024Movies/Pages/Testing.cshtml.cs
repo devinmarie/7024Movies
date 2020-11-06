@@ -18,7 +18,7 @@ namespace _7024Movies.Pages
         {
             using (var webClient = new WebClient())
             {
-                string JsonString = webClient.DownloadString("https://api.themoviedb.org/3/search/movie?api_key=a852a3b3771672da86800503084b853b&language=en-US&query=starwars&page=1&include_adult=false");
+                string JsonString = webClient.DownloadString("https://api.themoviedb.org/3/search/movie?api_key=a852a3b3771672da86800503084b853b&language=en-US&query=star&page=1&include_adult=false");
                 var results = SearchResults.FromJson(JsonString);
                 var results2 = results.Results;
                 ViewData["MovieResults"] = results2;
