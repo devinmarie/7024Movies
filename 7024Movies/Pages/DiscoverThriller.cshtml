@@ -3,69 +3,66 @@
 @{
     var thrillers = (DiscoverM.Result[])ViewData["Thrillers"];
     List<MovieId.MovieIds> thrillerids = (List<MovieId.MovieIds>)ViewData["ThrillerLkp"];
-    //List<long> ids = (List<long>)ViewData["Ids"];
+    List<IMDB.MovieImdb> thrillerimdb = (List<IMDB.MovieImdb>)ViewData["ThrillerIMDB"];
 
 }
 
+<head>
+    <link rel="stylesheet" href="https://drvic10k.github.io/bootstrap-sortable/Contents/bootstrap-sortable.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://drvic10k.github.io/bootstrap-sortable/Scripts/bootstrap-sortable.js"></script>
+</head>
+
 <div class="row padbottom">
-    <h3 class="text-center">Trending Thriller Movies</h3>
-    <table class="table">
-        <tr>
-            <th>Movie Title</th>
-            <th>Popularity</th>
-            <th>Vote Count</th>
-            <th>Vote Average</th>
-        </tr>
-        @{
-            foreach (DiscoverM.Result thriller in thrillers)
-            {
-                <tr>
-                    <td>@thriller.Title</td>
-                    <td>@thriller.Popularity</td>
-                    <td>@thriller.VoteCount</td>
-                    <td>@thriller.VoteAverage</td>
-                </tr>
-            }
-        }
 
-    </table>
-    <h3>Movie Lookup Info</h3>
-    <table class="table">
-        <tr>
-            <th>Movie ID</th>
-            <th>IMDB ID</th>
-        </tr>
+    <h3 class="center">Top Thriller Movies</h3>
+    <table class="table sortable table-sm table-hover" width="100%">
+        <thead>
+            <tr>
+                <th>Movie Title</th>
+                <th>Release Year</th>
+                <th>Content Rating</th>
+                <th>TMDb Rating</th>
+                <th>IMDB Rating</th>
+            </tr>
+        </thead>
         @{
-            foreach (MovieId.MovieIds id in thrillerids)
+            foreach (MovieId.MovieIds idlkp in thrillerids)
             {
-                <tr>
-                    <td>@id.Id</td>
-                    <td>@id.ImdbId</td>
-                </tr>
-            }
-        }
-
-    </table>
-    <h3>Merging the two together</h3>
-    <table class="table">
-        <tr>
-            <th>Movie ID</th>
-            <th>Movie Title</th>
-            <th>Movie IMDB ID</th>
-        </tr>
-        @{
-            foreach (MovieId.MovieIds thrillerid in thrillerids)
-            {
-                foreach (DiscoverM.Result thriller in thrillers)
+                foreach (DiscoverM.Result movies in thrillers)
                 {
-                    if (thrillerid.Id == thriller.Id)
-                    {
-                        <tr>
-                            <td>@thriller.Id</td>
-                            <td>@thriller.Title</td>
-                            <td>@thrillerid.ImdbId</td>
-                        </tr>
-                    }
+                    int count = 0;
+                    foreach (IMDB.MovieImdb imdb in thrillerimdb)
+
+                        if (imdb.Id is null)
+                        {
+                            count = count + 1;
+                            if (movies.Id == idlkp.Id && count == 1)
+                            {
+            <tr>
+                <td>@movies.Title</td>
+                <td>-</td>
+                <td>-</td>
+                <td>@movies.VoteAverage</td>
+                <td>-</td>
+            </tr>
+                            }
+                        }
+                        else
+                        {
+
+                            if (movies.Id == idlkp.Id && idlkp.ImdbId == (imdb.Id.ToString()))
+                            {
+            <tr>
+                <td>@movies.Title</td>
+                <td>@imdb.Year</td>
+                <td>@imdb.ContentRating</td>
+                <td>@movies.VoteAverage</td>
+                <td>@imdb.ImDbRating</td>
+            </tr>
+                            }
+                        }
+
                 }
 
             }

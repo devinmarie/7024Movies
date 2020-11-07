@@ -11,6 +11,9 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
 using Newtonsoft.Json.Serialization;
+using IMDbApiLib;
+using IMDbApiLib.Models;
+using MovieId;
 
 namespace _7024Movies.Pages
 {
@@ -37,6 +40,23 @@ namespace _7024Movies.Pages
                     thrillerid.Add(movielookup);
                 }
                 ViewData["ThrillerLkp"] = thrillerid;
+
+                
+                List<IMDB.MovieImdb> thrillerimdb = new List<IMDB.MovieImdb>();
+                foreach (MovieIds movie in thrillerid)
+                {
+
+                    string movieid = movie.ImdbId.ToString();
+                    uri = String.Format("https://imdb-api.com/en/API/Title/k_vxcfqztc/{0}", movieid);
+                    string ImdbString = webClient.DownloadString(uri);
+                    var imdbrating = IMDB.MovieImdb.FromJson(ImdbString);
+                    thrillerimdb.Add(imdbrating);
+
+                }
+                ViewData["ThrillerIMDB"] = thrillerimdb;
+
+                
+                
 
                 //Dictionary was created to practice class excercise
                 /*IDictionary<long, DiscoverM.Result> thrillerdic = new Dictionary<long, DiscoverM.Result>();
