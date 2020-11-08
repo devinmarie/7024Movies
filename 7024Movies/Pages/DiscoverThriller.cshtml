@@ -24,11 +24,13 @@
                 <th>Content Rating</th>
                 <th>TMDb Rating</th>
                 <th>IMDB Rating</th>
+                <th>Users Reviews</th>
             </tr>
         </thead>
         @{
             foreach (MovieId.MovieIds idlkp in thrillerids)
             {
+
                 foreach (DiscoverM.Result movies in thrillers)
                 {
                     int count = 0;
@@ -39,13 +41,14 @@
                             count = count + 1;
                             if (movies.Id == idlkp.Id && count == 1)
                             {
-            <tr>
-                <td>@movies.Title</td>
-                <td>-</td>
-                <td>-</td>
-                <td>@movies.VoteAverage</td>
-                <td>-</td>
-            </tr>
+                <tr>
+                    <td>@movies.Title</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>@movies.VoteAverage</td>
+                    <td>-</td>
+                    <td><a asp-page="./MovieReviews.Details">User Reviwes</a></td>
+                </tr>
                             }
                         }
                         else
@@ -53,13 +56,13 @@
 
                             if (movies.Id == idlkp.Id && idlkp.ImdbId == (imdb.Id.ToString()))
                             {
-            <tr>
-                <td>@movies.Title</td>
-                <td>@imdb.Year</td>
-                <td>@imdb.ContentRating</td>
-                <td>@movies.VoteAverage</td>
-                <td>@imdb.ImDbRating</td>
-            </tr>
+                                <tr>
+                                    <td>@movies.Title</td>
+                                    <td>@imdb.Year</td>
+                                    <td>@imdb.ContentRating</td>
+                                    <td>@movies.VoteAverage</td>
+                                    <td>@imdb.ImDbRating</td>
+                                </tr>
                             }
                         }
 
@@ -69,3 +72,4 @@
         }
     </table>
 </div>
+
