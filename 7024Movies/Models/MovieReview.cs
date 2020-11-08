@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _7024Movies.Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -11,18 +12,14 @@ namespace _7024Movies.Models
     {
         public int MovieReviewId { get; set; }
 
-        [DisplayName("Rooms")]
-        [Range(1, 5, ErrorMessage = "Please rate the movie from 1=Best to 5=Worst")]
-        [Required]
-        public int MReviewScore { get; set; }
+  
 
         [DisplayName("Review")]
         [Required]
         [DataType(DataType.MultilineText)]
         public string MReviewText { get; set; }
 
-        [DisplayName("Actors")]
-        public List<ActorReview> ActorReviews { get; set; }
+
 
     }
 }
