@@ -24,7 +24,6 @@
                 <th>Content Rating</th>
                 <th>TMDb Rating</th>
                 <th>IMDB Rating</th>
-                <th>Users Reviews</th>
             </tr>
         </thead>
         @{
@@ -47,7 +46,6 @@
                     <td>-</td>
                     <td>@movies.VoteAverage</td>
                     <td>-</td>
-                    <td><a asp-page="./MovieReviews.Details">User Reviwes</a></td>
                 </tr>
                             }
                         }
@@ -73,3 +71,4 @@
     </table>
 </div>
 
+<a class="btn btn-dark" href="/MovieReviewsThriller/Index" role="button">Audience Reviews</a>

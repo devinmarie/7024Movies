@@ -14,6 +14,7 @@ namespace MovieId
 
     public partial class MovieIds
     {
+        public static object movies { get; internal set; }
         [JsonProperty("id")]
         public long Id { get; set; }
 
