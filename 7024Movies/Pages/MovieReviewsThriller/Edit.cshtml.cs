@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using _7024Movies.Data;
 using _7024Movies.Models;
 
-namespace _7024Movies.Pages.MovieReviews
+namespace _7024Movies.Pages.MovieReviewsThriller
 {
     public class EditModel : PageModel
     {
@@ -21,7 +21,7 @@ namespace _7024Movies.Pages.MovieReviews
         }
 
         [BindProperty]
-        public MovieReview MovieReview { get; set; }
+        public MovieReviewThriller MovieReviewThriller { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,9 +30,9 @@ namespace _7024Movies.Pages.MovieReviews
                 return NotFound();
             }
 
-            MovieReview = await _context.MovieReview.FirstOrDefaultAsync(m => m.MovieReviewId == id);
+            MovieReviewThriller = await _context.MovieReview.FirstOrDefaultAsync(m => m.MovieReviewThrillerId == id);
 
-            if (MovieReview == null)
+            if (MovieReviewThriller == null)
             {
                 return NotFound();
             }
@@ -48,7 +48,7 @@ namespace _7024Movies.Pages.MovieReviews
                 return Page();
             }
 
-            _context.Attach(MovieReview).State = EntityState.Modified;
+            _context.Attach(MovieReviewThriller).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace _7024Movies.Pages.MovieReviews
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MovieReviewExists(MovieReview.MovieReviewId))
+                if (!MovieReviewThrillerExists(MovieReviewThriller.MovieReviewThrillerId))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace _7024Movies.Pages.MovieReviews
             return RedirectToPage("./Index");
         }
 
-        private bool MovieReviewExists(int id)
+        private bool MovieReviewThrillerExists(int id)
         {
-            return _context.MovieReview.Any(e => e.MovieReviewId == id);
+            return _context.MovieReview.Any(e => e.MovieReviewThrillerId == id);
         }
     }
 }

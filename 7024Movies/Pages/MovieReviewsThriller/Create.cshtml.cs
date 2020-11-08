@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using _7024Movies.Data;
 using _7024Movies.Models;
 
-namespace _7024Movies.Pages.MovieReviews
+namespace _7024Movies.Pages.MovieReviewsThriller
 {
     public class CreateModel : PageModel
     {
@@ -25,7 +25,7 @@ namespace _7024Movies.Pages.MovieReviews
         }
 
         [BindProperty]
-        public MovieReview MovieReview { get; set; }
+        public MovieReviewThriller MovieReviewThriller { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -36,7 +36,7 @@ namespace _7024Movies.Pages.MovieReviews
                 return Page();
             }
 
-            _context.MovieReview.Add(MovieReview);
+            _context.MovieReview.Add(MovieReviewThriller);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

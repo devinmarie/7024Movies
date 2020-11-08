@@ -1,0 +1,41 @@
+﻿@page
+@model _7024Movies.Pages.MovieReviewsComedy.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Audience Reviews</h1>
+
+<p>
+    <a asp-page="Create">Add your review!</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieReviewComedy[0].MovieNameC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieReviewComedy[0].MovieReviewC)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.MovieReviewComedy) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieNameC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieReviewC)
+            </td>
+            <td>
+                <a asp-page="./Pages/DiscoverThriller">Return to Comedy Ratings</a> |
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

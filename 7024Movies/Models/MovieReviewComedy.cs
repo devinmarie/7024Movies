@@ -8,16 +8,20 @@ using System.Threading.Tasks;
 
 namespace _7024Movies.Models
 {
-    public class MovieReview
+    public class MovieReviewComedy
     {
-        public int MovieReviewId { get; set; }
+        public int MovieReviewComedyId { get; set; }
 
-  
+        [DisplayName("Movie")]
+        [Required]
+        [DataType(DataType.Text)]
+        public string MovieNameC { get; set; }
 
-        [DisplayName("Review")]
+        [DisplayName("User Reviews")]
         [Required]
         [DataType(DataType.MultilineText)]
-        public string MReviewText { get; set; }
+        public string MovieReviewC { get; set; }
+
 
 
 
