@@ -1,9 +1,9 @@
 ﻿@page
-@model _7024Movies.Pages.DiscoverThrillerModel
+@model _7024Movies.Pages.DiscoverComedyModel
 @{
-    var thrillers = (DiscoverM.Result[])ViewData["Thrillers"];
-    List<MovieId.MovieIds> thrillerids = (List<MovieId.MovieIds>)ViewData["ThrillerLkp"];
-    List<IMDB.MovieImdb> thrillerimdb = (List<IMDB.MovieImdb>)ViewData["ThrillerIMDB"];
+    var comedies = (DiscoverM.Result[])ViewData["Comedies"];
+    List<MovieId.MovieIds> comedyids = (List<MovieId.MovieIds>)ViewData["ComedyLkp"];
+    List<IMDB.MovieImdb> comedyimdb = (List<IMDB.MovieImdb>)ViewData["ComedyIMDB"];
 
 }
 
@@ -14,10 +14,10 @@
 </head>
 
 <div class="row padbottom">
-    <h1 class="center">Top Thriller Movies</h1>
+    <h1 class="center">Top Comedy Movies</h1>
 </div>
 <div class="row padbottom">
-    <a class="center btn btn-dark" href="/MovieReviewsThriller/Index" role="button">Audience Reviews</a>
+    <a class="center btn btn-dark" href="/MovieReviewsComedy/Index" role="button">Audience Reviews</a>
 </div>
 <div class="row padbottomextra">
     <table class="table sortable table-sm table-hover" width="100%">
@@ -31,13 +31,13 @@
             </tr>
         </thead>
         @{
-            foreach (MovieId.MovieIds idlkp in thrillerids)
+            foreach (MovieId.MovieIds idlkp in comedyids)
             {
 
-                foreach (DiscoverM.Result movies in thrillers)
+                foreach (DiscoverM.Result movies in comedies)
                 {
                     int count = 0;
-                    foreach (IMDB.MovieImdb imdb in thrillerimdb)
+                    foreach (IMDB.MovieImdb imdb in comedyimdb)
 
                         if (imdb.Id is null)
                         {
@@ -75,7 +75,6 @@
     </table>
 </div>
 <div class="row padbottomextra">
-    <br/>
-    <br/>
+    <br />
+    <br />
 </div>
-

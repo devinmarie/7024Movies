@@ -21,13 +21,31 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1 justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/DiscoverThriller"><h5>Trending Thrillers</h5></a>
+                            <a class="nav-link" asp-area="" asp-page="/MovieReviewsOther/Create"><h5>Other Movie Review</h5></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Privacy"><h5>EXAMPLE2</h5></a>
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1 justify-content-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" asp-page="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <h5>Thriller Movies</h5>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-page="/DiscoverThriller"><h5>Trending</h5></a>
+                                <a class="dropdown-item" asp-page="/MovieReviewsThriller/Index"><h5>favflick Reviews</h5></a>
+                                <a class="dropdown-item" asp-page="/MovieReviewsThriller/Create"><h5>Submit Review</h5></a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Privacy"><h5>EXAMPLE3</h5></a>
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1 justify-content-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" asp-page="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <h5>Comedy Movies</h5>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-page="/DiscoverComedy"><h5>Trending</h5></a>
+                                <a class="dropdown-item" asp-page="/MovieReviewsComedy/Index"><h5>favflick Reviews</h5></a>
+                                <a class="dropdown-item" asp-page="/MovieReviewsComedy/Create"><h5>Submit Review</h5></a>
+                            </div>
                         </li>
                     </ul>
                 </div>
