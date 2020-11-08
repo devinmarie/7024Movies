@@ -14,6 +14,10 @@ namespace _7024Movies.Data
         {
         }
 
-        public DbSet<_7024Movies.Models.MovieReview> MovieReview { get; set; }
+        public DbSet<_7024Movies.Models.MovieReviewThriller> MovieReview { get; set; }
+
+        public DbSet<_7024Movies.Models.MovieReviewComedy> MovieReviewComedy { get; set; }
+
+        public DbSet<_7024Movies.Models.MovieReviewOther> MovieReviewOther { get; set; }
     }
 }

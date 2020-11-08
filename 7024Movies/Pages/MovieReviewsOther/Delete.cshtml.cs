@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using _7024Movies.Data;
 using _7024Movies.Models;
 
-namespace _7024Movies.Pages.MovieReviews
+namespace _7024Movies.Pages.MovieReviewsOther
 {
     public class DeleteModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace _7024Movies.Pages.MovieReviews
         }
 
         [BindProperty]
-        public MovieReview MovieReview { get; set; }
+        public MovieReviewOther MovieReviewOther { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,9 +29,9 @@ namespace _7024Movies.Pages.MovieReviews
                 return NotFound();
             }
 
-            MovieReview = await _context.MovieReview.FirstOrDefaultAsync(m => m.MovieReviewId == id);
+            MovieReviewOther = await _context.MovieReviewOther.FirstOrDefaultAsync(m => m.MovieReviewOtherId == id);
 
-            if (MovieReview == null)
+            if (MovieReviewOther == null)
             {
                 return NotFound();
             }
@@ -45,11 +45,11 @@ namespace _7024Movies.Pages.MovieReviews
                 return NotFound();
             }
 
-            MovieReview = await _context.MovieReview.FindAsync(id);
+            MovieReviewOther = await _context.MovieReviewOther.FindAsync(id);
 
-            if (MovieReview != null)
+            if (MovieReviewOther != null)
             {
-                _context.MovieReview.Remove(MovieReview);
+                _context.MovieReviewOther.Remove(MovieReviewOther);
                 await _context.SaveChangesAsync();
             }
 

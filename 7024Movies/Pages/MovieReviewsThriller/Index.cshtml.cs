@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using _7024Movies.Data;
 using _7024Movies.Models;
 
-namespace _7024Movies.Pages.MovieReviews
+namespace _7024Movies.Pages.MovieReviewsThriller
 {
     public class IndexModel : PageModel
     {
@@ -19,11 +19,11 @@ namespace _7024Movies.Pages.MovieReviews
             _context = context;
         }
 
-        public IList<MovieReview> MovieReview { get;set; }
+        public IList<MovieReviewThriller> MovieReviewThriller { get;set; }
 
         public async Task OnGetAsync()
         {
-            MovieReview = await _context.MovieReview.ToListAsync();
+            MovieReviewThriller = await _context.MovieReview.ToListAsync();
         }
     }
 }
