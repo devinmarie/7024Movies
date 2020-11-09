@@ -14,9 +14,9 @@ a:hover {
 
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #60210f;
+    border-color: #60210f;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -86,6 +86,11 @@ h3, h4, h5, h6, a {
 
 }
 
+p {
+    font-family: 72;
+    font-size: small;
+}
+
 h1 {
     color: #61210F;
     font-family: 72;
@@ -106,6 +111,7 @@ h3 {
 
 p {
     font-family: 72;
+    font-size: medium;
 }
 
 .padbottom {

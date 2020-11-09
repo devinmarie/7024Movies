@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using _7024Movies.Data;
 using _7024Movies.Models;
 
-namespace _7024Movies.Pages.MovieReviews
+namespace _7024Movies.Pages.MovieReviewsComedy
 {
     public class DetailsModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace _7024Movies.Pages.MovieReviews
             _context = context;
         }
 
-        public MovieReview MovieReview { get; set; }
+        public MovieReviewComedy MovieReviewComedy { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,9 @@ namespace _7024Movies.Pages.MovieReviews
                 return NotFound();
             }
 
-            MovieReview = await _context.MovieReview.FirstOrDefaultAsync(m => m.MovieReviewId == id);
+            MovieReviewComedy = await _context.MovieReviewComedy.FirstOrDefaultAsync(m => m.MovieReviewComedyId == id);
 
-            if (MovieReview == null)
+            if (MovieReviewComedy == null)
             {
                 return NotFound();
             }
