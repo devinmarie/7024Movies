@@ -59,15 +59,10 @@ The three main models we plan to pull into our application from TMDb are:
 
 
 ![IMDb Image](https://d29fhpw069ctt2.cloudfront.net/icon/image/38673/preview.svg)
-Our second data souce will be [IMDb](https://developer.imdb.com/).
+Our second data source will be [IMDb](https://developer.imdb.com/).
 
 IMDb is one of the world leaders in entertainment content and information as they have over 6 million music, movie and TV titles, and over 10 million celebrities. IMDb gives us access to hundreds of millions of entertainment data points.  
 
-### Example of Model Information
-[IMDb API Usage Example and Documentation](https://developer.imdb.com/documentation/developer.imdb.pdf)
-On page 5 of the developer documentation IMDb describes their file format as, "IMDbʼs data set is provided in JSON Lines file format. The files are UTF-8 encoded text files, where each line in the file is a valid JSON string. Each JSON document, one per line, relates to a single entity,
-uniquely identified by an IMDb ID. We also provide a JSON schema that documents the format that is
-used for each JSON document within the file."
 
 ### Example JSON Schema
 public partial class MovieImdb
@@ -215,8 +210,9 @@ public partial class MovieImdb
         public string ErrorMessage { get; set; }
     }
 
-### Main Models
-The main models we plan to inlcude are:
+### Example of Model Information
+[IMDb API Usage Example and Documentation](https://developer.imdb.com/documentation/developer.imdb.pdf)
+The main models we plan to include are:
 * [IMDb Movie]
 public class ImdbMovie
     {
