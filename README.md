@@ -288,6 +288,7 @@ public class ImdbMovie
 
         public string ErrorMessage { get; set; }
     }
+The team may choose to pull additional data as they see fit.
 
 ## Team Composition
 The team is made up of:
