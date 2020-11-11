@@ -72,6 +72,7 @@ used for each JSON document within the file."
 ### Example JSON Schema
 public partial class MovieImdb
     {
+        
         [JsonProperty("id")]
         public object Id { get; set; }
 
@@ -268,9 +269,9 @@ public class ImdbMovie
         public TvEpisodeInfo TvEpisodeInfo { get; set; }
         public string ErrorMessage { get; set; }
     }
-* [Trailer Data]
- public class TrailerData
+* public class RatingData
     {
+        
         
         public string IMDbId { get; set; }
         public string Title { get; set; }
@@ -278,13 +279,12 @@ public class ImdbMovie
         public string Type { get; set; }
         public string Year { get; set; }
 
-        public string VideoId { get; set; }
-        public string VideoTitle { get; set; }
-        public string VideoDescription { get; set; }
-        public string ThumbnailUrl { get; set; }
-        public string UploadDate { get; set; }
-        public string Link { get; set; }
-        public string LinkEmbed { get; set; }
+        public string IMDb { get; set; }
+        public string Metacritic { get; set; }
+        public string TheMovieDb { get; set; }
+        public string RottenTomatoes { get; set; }
+        public string TV_com { get; set; }
+        public string FilmAffinity { get; set; }
 
         public string ErrorMessage { get; set; }
     }
