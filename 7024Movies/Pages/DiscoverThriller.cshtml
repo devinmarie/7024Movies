@@ -20,7 +20,7 @@
     <a class="center btn btn-dark" href="/MovieReviewsThriller/Index" role="button">Audience Reviews</a>
 </div>
 <div class="row padbottomextra">
-    <table class="table sortable table-sm table-hover" width="100%">
+    <table class="table sortable table-sm table-hover" width="100%" border="1">
         <thead>
             <tr>
                 <th>Movie Title</th>
@@ -44,13 +44,15 @@
                             count = count + 1;
                             if (movies.Id == idlkp.Id && count == 1)
                             {
-                                <tr>
-                                    <td>@movies.Title</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>@movies.VoteAverage</td>
-                                    <td>-</td>
-                                </tr>
+                                string url = "https://www.imdb.com/title/tt" + imdb.Id;
+                                
+                <tr>
+                    <td><a href="@url">@movies.Title</a></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>@movies.VoteAverage</td>
+                    <td>-</td>
+                </tr>
                             }
                         }
                         else
@@ -58,13 +60,13 @@
 
                             if (movies.Id == idlkp.Id && idlkp.ImdbId == (imdb.Id.ToString()))
                             {
-                                <tr>
-                                    <td>@movies.Title</td>
-                                    <td>@imdb.Year</td>
-                                    <td>@imdb.ContentRating</td>
-                                    <td>@movies.VoteAverage</td>
-                                    <td>@imdb.ImDbRating</td>
-                                </tr>
+                <tr>
+                    <td>@movies.Title</td>
+                    <td>@imdb.Year</td>
+                    <td>@imdb.ContentRating</td>
+                    <td>@movies.VoteAverage</td>
+                    <td>@imdb.ImDbRating</td>
+                </tr>
                             }
                         }
 
