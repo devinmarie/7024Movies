@@ -19,11 +19,7 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
             <div class="container">
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1 justify-content-center">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/MovieReviewsOther/Create"><h5>Other Movie Review</h5></a>
-                        </li>
-                    </ul>
+                   
                     <ul class="navbar-nav flex-grow-1 justify-content-center">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" asp-page="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,6 +44,23 @@
                             </div>
                         </li>
                     </ul>
+
+
+                    <ul class="navbar-nav flex-grow-1 justify-content-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" asp-page="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <h5>Other Movies</h5>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-page="/DiscoverOther"><h5>Trending</h5></a>
+                                <a class="dropdown-item" asp-page="/MovieReviewsOther/Index"><h5>favflick Reviews</h5></a>
+                                <a class="dropdown-item" asp-page="/MovieReviewsOther/Create"><h5>Submit Review</h5></a>
+                            </div>
+                        </li>
+                    </ul>
+
+
+
                 </div>
             </div>
         </nav>

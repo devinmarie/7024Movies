@@ -1,0 +1,33 @@
+﻿@page
+@model _7024Movies.Pages.DiscoverOtherModel
+@{
+    var others = (DiscoverM.Result[])ViewData["Others"];
+    List<MovieId.MovieIds> otherids = (List<MovieId.MovieIds>)ViewData["OtherLkp"];
+    List<IMDB.MovieImdb> otherimdb = (List<IMDB.MovieImdb>)ViewData["OtherIMDB"];
+
+}
+
+<head>
+    <link rel="stylesheet" href="https://drvic10k.github.io/bootstrap-sortable/Contents/bootstrap-sortable.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://drvic10k.github.io/bootstrap-sortable/Scripts/bootstrap-sortable.js"></script>
+</head>
+
+<div class="row padbottom">
+    <h1 class="center">Top Other Movies</h1>
+</div>
+<div class="row padbottom">
+    <a class="center btn btn-dark" href="/MovieReviewsOther/Index" role="button">Audience Reviews</a>
+</div>
+<div class="row padbottomextra">
+    <table class="table sortable table-sm table-hover" width="100%">
+        <thead>
+            <tr>
+                <th>Movie Title</th>
+                <th>Release Year</th>
+                <th>Content Rating</th>
+                <th>TMDb Rating</th>
+                <th>IMDB Rating</th>
+            </tr>
+        </thead>
+      
