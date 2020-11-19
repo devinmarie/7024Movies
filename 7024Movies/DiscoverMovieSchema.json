@@ -35,10 +35,13 @@
       "additionalProperties": false,
       "properties": {
         "popularity": {
-          "type": "number"
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000
         },
         "vote_count": {
           "type": "integer"
+          
         },
         "video": {
           "type": "boolean"
