@@ -12,16 +12,16 @@ using Newtonsoft.Json.Serialization;
 
 namespace _7024Movies.Pages
 {
-    public class TestingModel : PageModel
+    public class SoccerMoviesModel : PageModel
     {
         public void OnGet()
         {
             using (var webClient = new WebClient())
             {
-                string MovieReviews = webClient.DownloadString("https://api.themoviedb.org/3/search/movie?api_key=a852a3b3771672da86800503084b853b&language=en-US&query=star&page=1&include_adult=false");
+                string MovieReviews = webClient.DownloadString("https://api.themoviedb.org/3/search/movie?api_key=a852a3b3771672da86800503084b853b&language=en-US&sort_by=popularity.desc&query=Soccer&page=1&include_adult=false");
                 var results = SearchResults.FromJson(MovieReviews);
                 var results2 = results.Results;
-                ViewData["MovieResults"] = results2;
+                ViewData["SoccerResults"] = results2;                
             }
         }
     }

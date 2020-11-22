@@ -1,0 +1,386 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/MovieImdbSchema",
+  "definitions": {
+    "MovieImdbSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "originalTitle": {
+          "type": "string"
+        },
+        "fullTitle": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "year": {
+          "type": "string",
+          "format": "integer"
+        },
+        "image": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ],
+          "qt-uri-extensions": [
+            ".jpg"
+          ]
+        },
+        "releaseDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "runtimeMins": {
+          "type": "string",
+          "format": "integer"
+        },
+        "runtimeStr": {
+          "type": "string"
+        },
+        "plot": {
+          "type": "string"
+        },
+        "plotLocal": {
+          "type": "string"
+        },
+        "plotLocalIsRtl": {
+          "type": "boolean"
+        },
+        "awards": {
+          "type": "string"
+        },
+        "directors": {
+          "type": "string"
+        },
+        "directorList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RList"
+          }
+        },
+        "writers": {
+          "type": "string"
+        },
+        "writerList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RList"
+          }
+        },
+        "stars": {
+          "type": "string"
+        },
+        "starList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RList"
+          }
+        },
+        "actorList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ActorList"
+          }
+        },
+        "fullCast": {
+          "type": "null"
+        },
+        "genres": {
+          "type": "string"
+        },
+        "genreList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GenreList"
+          }
+        },
+        "companies": {
+          "type": "string"
+        },
+        "companyList": {
+          "type": "array",
+          "items": {}
+        },
+        "countries": {
+          "type": "string"
+        },
+        "countryList": {
+          "type": "array",
+          "items": {}
+        },
+        "languages": {
+          "type": "string"
+        },
+        "languageList": {
+          "type": "array",
+          "items": {}
+        },
+        "contentRating": {
+          "type": "string"
+        },
+        "imDbRating": {
+          "type": "string"
+        },
+        "imDbRatingVotes": {
+          "type": "string",
+          "format": "integer"
+        },
+        "metacriticRating": {
+          "type": "string",
+          "format": "integer"
+        },
+        "ratings": {
+          "type": "null"
+        },
+        "wikipedia": {
+          "type": "null"
+        },
+        "posters": {
+          "type": "null"
+        },
+        "images": {
+          "type": "null"
+        },
+        "trailer": {
+          "type": "null"
+        },
+        "boxOffice": {
+          "$ref": "#/definitions/BoxOffice"
+        },
+        "tagline": {
+          "type": "string"
+        },
+        "keywords": {
+          "type": "string"
+        },
+        "keywordList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "similars": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Similar"
+          }
+        },
+        "tvSeriesInfo": {
+          "type": "null"
+        },
+        "tvEpisodeInfo": {
+          "type": "null"
+        },
+        "errorMessage": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "actorList",
+        "awards",
+        "boxOffice",
+        "companies",
+        "companyList",
+        "contentRating",
+        "countries",
+        "countryList",
+        "directorList",
+        "directors",
+        "errorMessage",
+        "fullCast",
+        "fullTitle",
+        "genreList",
+        "genres",
+        "id",
+        "imDbRating",
+        "imDbRatingVotes",
+        "image",
+        "images",
+        "keywordList",
+        "keywords",
+        "languageList",
+        "languages",
+        "metacriticRating",
+        "originalTitle",
+        "plot",
+        "plotLocal",
+        "plotLocalIsRtl",
+        "posters",
+        "ratings",
+        "releaseDate",
+        "runtimeMins",
+        "runtimeStr",
+        "similars",
+        "starList",
+        "stars",
+        "tagline",
+        "title",
+        "trailer",
+        "tvEpisodeInfo",
+        "tvSeriesInfo",
+        "type",
+        "wikipedia",
+        "writerList",
+        "writers",
+        "year"
+      ],
+      "title": "MovieImdbSchema"
+    },
+    "ActorList": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ],
+          "qt-uri-extensions": [
+            ".jpg"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "asCharacter": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "asCharacter",
+        "id",
+        "image",
+        "name"
+      ],
+      "title": "ActorList"
+    },
+    "BoxOffice": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "budget": {
+          "type": "string"
+        },
+        "openingWeekendUSA": {
+          "type": "string"
+        },
+        "grossUSA": {
+          "type": "string"
+        },
+        "cumulativeWorldwideGross": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "budget",
+        "cumulativeWorldwideGross",
+        "grossUSA",
+        "openingWeekendUSA"
+      ],
+      "title": "BoxOffice"
+    },
+    "RList": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "RList"
+    },
+    "GenreList": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "value"
+      ],
+      "title": "GenreList"
+    },
+    "Similar": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "fullTitle": {
+          "type": "string"
+        },
+        "year": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": [
+            "https"
+          ],
+          "qt-uri-extensions": [
+            ".jpg"
+          ]
+        },
+        "plot": {
+          "type": "string"
+        },
+        "directors": {
+          "type": "string"
+        },
+        "stars": {
+          "type": "string"
+        },
+        "genres": {
+          "type": "string"
+        },
+        "imDbRating": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "directors",
+        "fullTitle",
+        "genres",
+        "id",
+        "imDbRating",
+        "image",
+        "plot",
+        "stars",
+        "title",
+        "year"
+      ],
+      "title": "Similar"
+    }
+  }
+}
