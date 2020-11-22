@@ -1,0 +1,61 @@
+﻿@page
+@model _7024Movies.Pages.MovieSearchTestModel
+@{
+
+}
+<head>
+    <link rel="stylesheet" href="https://drvic10k.github.io/bootstrap-sortable/Contents/bootstrap-sortable.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://drvic10k.github.io/bootstrap-sortable/Scripts/bootstrap-sortable.js"></script>
+</head>
+<style>
+    th {
+        text-align: center;
+    }
+</style>
+<h1>Search</h1>
+
+<div class="row">
+    <div class="col">
+        <form action="" method="get" class="form-inline">
+            <input asp-for="MovieName" class="form-control mr-sm-2 mb-2" placeholder="Search by movie title..." />
+            <button type="submit" class="btn btn-primary mb-2">Search</button>
+        </form>
+    </div>
+
+</div>
+<div class="row padbottomextra">
+    @if (Model.MovieSearchResults != null)
+    {
+        <table class="table sortable table-sm table-hover" width="100%">
+            <thead>
+                <tr>
+                    <th>Movie Title</th>
+                    <th>Release Date</th>
+                    <th>Popularity</th>
+                    <th>Overview</th>
+                </tr>
+            </thead>
+            @for (int i = 0; i < Model.MovieSearchResults.Results.Length; i++)
+            {
+                <tr>
+                    <td> @Model.MovieSearchResults.Results[i].Title</td>
+                    <td> @Model.MovieSearchResults.Results[i].ReleaseDate</td>
+                    <td> @Model.MovieSearchResults.Results[i].Popularity</td>
+                    <td> @Model.MovieSearchResults.Results[i].Overview</td>
+                    <td><a asp-page-handler="NextPage" asp-route-id="@Model.MovieSearchResults.Results[0].Title">Next Page</a></td>
+                </tr>
+            }
+
+
+        </table>
+    }
+</div>
+<div class="row padbottomextra">
+    <br />
+    <br />
+</div>
+<div>
+    <a href="#" class="previous">&laquo; Previous</a>
+    <a href="#" class="next">Next &raquo;</a>
+</div>
