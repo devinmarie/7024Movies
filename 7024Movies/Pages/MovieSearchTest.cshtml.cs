@@ -19,12 +19,8 @@ namespace _7024Movies.Pages
             if(string.IsNullOrEmpty(movieName)){
                 return;
             }
-
             movieName.Replace(" ", "%20");
             string apiKey = "a852a3b3771672da86800503084b853b";
-            //https://api.themoviedb.org/3/movie/550?api_key=a852a3b3771672da86800503084b853b
-            //https://api.themoviedb.org/3/search/movie?api_key=a852a3b3771672da86800503084b853b&language=en-US&query=inception&page=1&include_adult=false
-
             // Call asynchronous network methods in a try/catch block to handle exceptions.
             try
             {
@@ -38,7 +34,6 @@ namespace _7024Movies.Pages
             }
             catch
             {
-                //TODO: display error
             }
         }
         public IActionResult OnGetNextPage(int id)
