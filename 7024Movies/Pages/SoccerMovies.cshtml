@@ -2,11 +2,18 @@
 @model _7024Movies.Pages.SoccerMoviesModel
 @{
     var results = (_7024Movies.Result[])ViewData["SoccerResults"];
+    //SoccerGame.SoccerGames[] games = (SoccerGame.SoccerGames[])ViewData["SoccerGames"];
+    string cdate = (string)ViewData["currentdate"];
 }
 
 <body>
     <div class="row padbottom">
         <h1 class="center">Top Soccer Movies</h1>
+    </div>
+    <div>
+        @{
+            <h2>@cdate</h2>
+        }
     </div>
     <div class="row padbottom">
         @{
@@ -25,6 +32,53 @@
             }
         }
     </div>
+    <!--
+    <div class="row padbottom">
+        <table>
+            <thead>
+                <tr>
+                    <td>Match Time</td>
+                    <td>Home Team</td>
+                    <td>Away Team</td>
+                    <td>Current Clock</td>
+                    <td>Home Team Score</td>
+                    <td>Away Team Score</td>
+                    <td>Winner</td>
+                </tr>
+            </thead>
+            @{/*
+                foreach (SoccerGame.SoccerGames game in games)
+                {
+                    if (game.HomeTeamName is null)
+                    {
+                        <tr>
+                            <td>@game.DateTime</td>
+                            <td>@game.HomeTeamName</td>
+                            <td>@game.AwayTeamName</td>
+                            <td>@game.Clock</td>
+                            <td>@game.HomeTeamScore</td>
+                            <td>@game.AwayTeamScore</td>
+                            <td>@game.Winner</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>No Games Today</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    }
+
+                } */
+            }
+        </table>
+    </div>
+    -->
 </body>
 
 
