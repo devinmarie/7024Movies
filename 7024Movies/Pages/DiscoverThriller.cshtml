@@ -13,69 +13,68 @@
     <script src="https://drvic10k.github.io/bootstrap-sortable/Scripts/bootstrap-sortable.js"></script>
 </head>
 
-<div class="row padbottom">
-    <h1 class="center">Top Thriller Movies</h1>
-</div>
-<div class="row padbottom">
-    <a class="center btn btn-dark" href="/MovieReviewsThriller/Index" role="button">Audience Reviews</a>
-</div>
-<div class="row padbottomextra">
-    <table class="table sortable table-sm table-hover" width="100%">
-        <thead>
-            <tr>
-                <th>Movie Title</th>
-                <th>Release Year</th>
-                <th>Content Rating</th>
-                <th>TMDb Rating</th>
-                <th>IMDB Rating</th>
-            </tr>
-        </thead>
-        @{
-            foreach (MovieId.MovieIds idlkp in thrillerids)
-            {
-
-                foreach (DiscoverM.Result movies in thrillers)
+<body>
+    <div class="row padbottomextra">
+        <h1 class="center">Top Thriller Movies</h1>
+    </div>
+    <div class="row padbottom">
+        <a class="center btn btn-dark" href="/MovieReviewsThriller/Index" role="button">Audience Reviews</a>
+    </div>
+    <div class="row padbottomextra">
+        <table class="table sortable table-sm table-hover" width="100%">
+            <thead>
+                <tr>
+                    <th>Movie Title</th>
+                    <th>Release Year</th>
+                    <th>Content Rating</th>
+                    <th>TMDb Rating</th>
+                    <th>IMDB Rating</th>
+                </tr>
+            </thead>
+            @{
+                foreach (MovieId.MovieIds idlkp in thrillerids)
                 {
-                    int count = 0;
-                    foreach (IMDB.MovieImdb imdb in thrillerimdb)
 
-                        if (imdb.Id is null)
-                        {
-                            count = count + 1;
-                            if (movies.Id == idlkp.Id && count == 1)
-                            {
-                                <tr>
-                                    <td>@movies.Title</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>@movies.VoteAverage</td>
-                                    <td>-</td>
-                                </tr>
-                            }
-                        }
-                        else
-                        {
+                    foreach (DiscoverM.Result movies in thrillers)
+                    {
+                        int count = 0;
+                        foreach (IMDB.MovieImdb imdb in thrillerimdb)
 
-                            if (movies.Id == idlkp.Id && idlkp.ImdbId == (imdb.Id.ToString()))
+                            if (imdb.Id is null)
                             {
-                                <tr>
-                                    <td>@movies.Title</td>
-                                    <td>@imdb.Year</td>
-                                    <td>@imdb.ContentRating</td>
-                                    <td>@movies.VoteAverage</td>
-                                    <td>@imdb.ImDbRating</td>
-                                </tr>
+                                count = count + 1;
+                                if (movies.Id == idlkp.Id && count == 1)
+                                {
+                                    <tr>
+                                        <td>@movies.Title</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>@movies.VoteAverage</td>
+                                        <td>-</td>
+                                    </tr>
+                                }
                             }
-                        }
+                            else
+                            {
+
+                                if (movies.Id == idlkp.Id && idlkp.ImdbId == (imdb.Id.ToString()))
+                                {
+                                    <tr>
+                                        <td>@movies.Title</td>
+                                        <td>@imdb.Year</td>
+                                        <td>@imdb.ContentRating</td>
+                                        <td>@movies.VoteAverage</td>
+                                        <td>@imdb.ImDbRating</td>
+                                    </tr>
+                                }
+                            }
+
+                    }
 
                 }
-
             }
-        }
-    </table>
-</div>
-<div class="row padbottomextra">
-    <br/>
-    <br/>
-</div>
+        </table>
+    </div>
+</body>
+
 

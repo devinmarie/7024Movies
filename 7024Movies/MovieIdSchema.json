@@ -1,0 +1,35 @@
+﻿{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/MovieIDSchema",
+    "definitions": {
+        "MovieIDSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "imdb_id": {
+                    "type": "string"
+                },
+                "facebook_id": {
+                    "type": "string"
+                },
+                "instagram_id": {
+                    "type": "string"
+                },
+                "twitter_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "facebook_id",
+                "id",
+                "imdb_id",
+                "instagram_id",
+                "twitter_id"
+            ],
+            "title": "MovieIDSchema"
+        }
+    }
+}

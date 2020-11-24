@@ -1,8 +1,8 @@
 ﻿{
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "$ref": "#/definitions/MovieIMDB",
+  "$ref": "#/definitions/SearchResults",
   "definitions": {
-    "MovieIMDB": {
+    "SearchResults": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -28,20 +28,17 @@
         "total_pages",
         "total_results"
       ],
-      "title": "MovieIMDB"
+      "title": "SearchResults"
     },
     "Result": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
         "popularity": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 1000
+          "type": "number"
         },
         "vote_count": {
           "type": "integer"
-          
         },
         "video": {
           "type": "boolean"
@@ -56,10 +53,17 @@
           "type": "boolean"
         },
         "backdrop_path": {
-          "type": "string"
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "original_language": {
-          "$ref": "#/definitions/OriginalLanguage"
+          "type": "string"
         },
         "original_title": {
           "type": "string"
@@ -101,13 +105,6 @@
         "vote_count"
       ],
       "title": "Result"
-    },
-    "OriginalLanguage": {
-      "type": "string",
-      "enum": [
-        "en"
-      ],
-      "title": "OriginalLanguage"
     }
   }
 }
