@@ -1,0 +1,233 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/SoccerGameElement"
+  },
+  "definitions": {
+    "SoccerGameElement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "GameId": {
+          "type": "integer"
+        },
+        "RoundId": {
+          "type": "integer"
+        },
+        "Season": {
+          "type": "integer"
+        },
+        "SeasonType": {
+          "type": "integer"
+        },
+        "Group": {
+          "type": "null"
+        },
+        "AwayTeamId": {
+          "type": "integer"
+        },
+        "HomeTeamId": {
+          "type": "integer"
+        },
+        "VenueId": {
+          "type": "null"
+        },
+        "Day": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "DateTime": {
+          "type": "null"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "Week": {
+          "type": "integer"
+        },
+        "Period": {
+          "type": "string"
+        },
+        "Clock": {
+          "type": "null"
+        },
+        "Winner": {
+          "type": "string"
+        },
+        "VenueType": {
+          "type": "null"
+        },
+        "AwayTeamKey": {
+          "type": "string"
+        },
+        "AwayTeamName": {
+          "type": "string"
+        },
+        "AwayTeamCountryCode": {
+          "type": "string"
+        },
+        "AwayTeamScore": {
+          "type": "null"
+        },
+        "AwayTeamScorePeriod1": {
+          "type": "null"
+        },
+        "AwayTeamScorePeriod2": {
+          "type": "null"
+        },
+        "AwayTeamScoreExtraTime": {
+          "type": "null"
+        },
+        "AwayTeamScorePenalty": {
+          "type": "null"
+        },
+        "HomeTeamKey": {
+          "type": "string"
+        },
+        "HomeTeamName": {
+          "type": "string"
+        },
+        "HomeTeamCountryCode": {
+          "type": "string"
+        },
+        "HomeTeamScore": {
+          "type": "null"
+        },
+        "HomeTeamScorePeriod1": {
+          "type": "null"
+        },
+        "HomeTeamScorePeriod2": {
+          "type": "null"
+        },
+        "HomeTeamScoreExtraTime": {
+          "type": "null"
+        },
+        "HomeTeamScorePenalty": {
+          "type": "null"
+        },
+        "HomeTeamMoneyLine": {
+          "type": "null"
+        },
+        "AwayTeamMoneyLine": {
+          "type": "null"
+        },
+        "DrawMoneyLine": {
+          "type": "null"
+        },
+        "PointSpread": {
+          "type": "null"
+        },
+        "HomeTeamPointSpreadPayout": {
+          "type": "null"
+        },
+        "AwayTeamPointSpreadPayout": {
+          "type": "null"
+        },
+        "OverUnder": {
+          "type": "null"
+        },
+        "OverPayout": {
+          "type": "null"
+        },
+        "UnderPayout": {
+          "type": "null"
+        },
+        "Attendance": {
+          "type": "null"
+        },
+        "Updated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "UpdatedUtc": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "GlobalGameId": {
+          "type": "integer"
+        },
+        "GlobalAwayTeamId": {
+          "type": "integer"
+        },
+        "GlobalHomeTeamId": {
+          "type": "integer"
+        },
+        "ClockExtra": {
+          "type": "null"
+        },
+        "ClockDisplay": {
+          "type": "string"
+        },
+        "IsClosed": {
+          "type": "boolean"
+        },
+        "HomeTeamFormation": {
+          "type": "null"
+        },
+        "AwayTeamFormation": {
+          "type": "null"
+        },
+        "PlayoffAggregateScore": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "Attendance",
+        "AwayTeamCountryCode",
+        "AwayTeamFormation",
+        "AwayTeamId",
+        "AwayTeamKey",
+        "AwayTeamMoneyLine",
+        "AwayTeamName",
+        "AwayTeamPointSpreadPayout",
+        "AwayTeamScore",
+        "AwayTeamScoreExtraTime",
+        "AwayTeamScorePenalty",
+        "AwayTeamScorePeriod1",
+        "AwayTeamScorePeriod2",
+        "Clock",
+        "ClockDisplay",
+        "ClockExtra",
+        "DateTime",
+        "Day",
+        "DrawMoneyLine",
+        "GameId",
+        "GlobalAwayTeamId",
+        "GlobalGameId",
+        "GlobalHomeTeamId",
+        "Group",
+        "HomeTeamCountryCode",
+        "HomeTeamFormation",
+        "HomeTeamId",
+        "HomeTeamKey",
+        "HomeTeamMoneyLine",
+        "HomeTeamName",
+        "HomeTeamPointSpreadPayout",
+        "HomeTeamScore",
+        "HomeTeamScoreExtraTime",
+        "HomeTeamScorePenalty",
+        "HomeTeamScorePeriod1",
+        "HomeTeamScorePeriod2",
+        "IsClosed",
+        "OverPayout",
+        "OverUnder",
+        "Period",
+        "PlayoffAggregateScore",
+        "PointSpread",
+        "RoundId",
+        "Season",
+        "SeasonType",
+        "Status",
+        "UnderPayout",
+        "Updated",
+        "UpdatedUtc",
+        "VenueId",
+        "VenueType",
+        "Week",
+        "Winner"
+      ],
+      "title": "SoccerGameElement"
+    }
+  }
+}

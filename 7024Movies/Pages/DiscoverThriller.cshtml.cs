@@ -28,55 +28,47 @@ namespace _7024Movies.Pages
                 JObject jsonObject = JObject.Parse(JsonString);
                 if (jsonObject.IsValid(schema))
                 {
-                    var discoverthriller = DiscoverM.DiscoverMovie.FromJson(JsonString);
-                    var thrillermovies = discoverthriller.Results;
-                    ViewData["Thrillers"] = thrillermovies;
+                    var DiscoverThriller = DiscoverM.DiscoverMovie.FromJson(JsonString);
+                    var ThrillerMovies = DiscoverThriller.Results;
+                    ViewData["Thrillers"] = ThrillerMovies;
 
 
                     List<MovieId.MovieIds> thrillerid = new List<MovieId.MovieIds>();
                     string uri = "";
-                    foreach (DiscoverM.Result movie in thrillermovies)
+                    foreach (DiscoverM.Result movie in ThrillerMovies)
                     {
 
-                        string movieid = movie.Id.ToString();
-                        uri = String.Format("https://api.themoviedb.org/3/movie/{0}/external_ids?api_key=a852a3b3771672da86800503084b853b", movieid);
+                        string MovieId = movie.Id.ToString();
+                        uri = String.Format("https://api.themoviedb.org/3/movie/{0}/external_ids?api_key=a852a3b3771672da86800503084b853b", MovieId);
                         string JsonString2 = webClient.DownloadString(uri);
-                        var movielookup = MovieId.MovieIds.FromJson(JsonString2);
-                        thrillerid.Add(movielookup);
+                        JSchema lkpschema = JSchema.Parse(System.IO.File.ReadAllText("MovieIdSchema.json"));
+                        JObject jsonlkpschema = JObject.Parse(JsonString2);
+                        if (jsonlkpschema.IsValid(lkpschema))
+                        {
+                            var MovieLookup = global::MovieId.MovieIds.FromJson(JsonString2);
+                            thrillerid.Add(MovieLookup);
+                            ViewData["ThrillerLkp"] = thrillerid;
+                        }
                     }
-                    ViewData["ThrillerLkp"] = thrillerid;
-
 
                     List<IMDB.MovieImdb> thrillerimdb = new List<IMDB.MovieImdb>();
                     foreach (MovieIds movie in thrillerid)
                     {
                         //k_3re1w44s
                         //k_vxcfqztc
+                        //k_1gkshhzw
                         string movieid = movie.ImdbId.ToString();
-                        uri = String.Format("https://imdb-api.com/en/API/Title/k_3re1w44s/{0}", movieid);
+                        uri = String.Format("https://imdb-api.com/en/API/Title/k_1gkshhzw/{0}", movieid);
                         string ImdbString = webClient.DownloadString(uri);
-                        var imdbrating = IMDB.MovieImdb.FromJson(ImdbString);
-                        thrillerimdb.Add(imdbrating);
-
+                        JSchema idmbschema = JSchema.Parse(System.IO.File.ReadAllText("MovieIMDB.json"));
+                        JObject jsonimdbschema = JObject.Parse(ImdbString);
+                        if (jsonimdbschema.IsValid(idmbschema))
+                        {
+                            var ImdbRating = IMDB.MovieImdb.FromJson(ImdbString);
+                            thrillerimdb.Add(ImdbRating);
+                            ViewData["ThrillerIMDB"] = thrillerimdb;
+                        }
                     }
-                    ViewData["ThrillerIMDB"] = thrillerimdb;
-
-                    //Dictionary was created to practice class excercise
-                    /*IDictionary<long, DiscoverM.Result> thrillerdic = new Dictionary<long, DiscoverM.Result>();
-                    foreach (DiscoverM.Result movie in thrillermovies)
-                    {
-                        thrillerdic.Add(movie.Id, movie);
-                    }
-                    */
-
-                    //List was created in case this was needed to filter anything
-                    /*List<long> ids = new List<long>();
-                    foreach (DiscoverM.Result movie in thrillermovies)
-                    {
-                        ids.Add(movie.Id);
-                    }
-                    ViewData["Ids"] = ids;
-                    */
                 }
 
             }

@@ -1,0 +1,139 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a:hover {
+  color: #EA2B1F;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #60210f;
+    border-color: #60210f;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: #1b6ec2;
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  background-color: #F9EDCC
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.navbar-image-top {
+    width: 400px;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3, h4, h5, h6, a {
+    color: #61210F;
+    font-family: 72;
+
+}
+
+p {
+    font-family: 72;
+    font-size: small;
+}
+
+h1 {
+    color: #61210F;
+    font-family: 72;
+    font-weight: 800;
+}
+
+h2 {
+    color: #EDAE49;
+    font-family: 72;
+    font-weight: 800;
+}
+
+h3 {
+    color: #EA2B1f;
+    font-family: 72;
+    font-weight: 600;
+}
+
+p {
+    font-family: 72;
+    font-size: medium;
+}
+
+.padbottom {
+    padding-bottom: 30px;
+}
+
+.card:hover {
+        filter: grayscale(20%);
+}
+
+/*Additional Custom CSS created for PRINT is below*/
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: #FFFFFF;
+}
+
+header {
+    display: none;
+}
+
+footer {
+    display: none;
+}

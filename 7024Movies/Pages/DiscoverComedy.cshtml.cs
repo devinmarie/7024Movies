@@ -38,22 +38,35 @@ namespace _7024Movies.Pages
                         string movieid = movie.Id.ToString();
                         uri = String.Format("https://api.themoviedb.org/3/movie/{0}/external_ids?api_key=a852a3b3771672da86800503084b853b", movieid);
                         string JsonString2 = webClient.DownloadString(uri);
-                        var movielookup = MovieId.MovieIds.FromJson(JsonString2);
-                        comedyid.Add(movielookup);
+                        JSchema lkpschema = JSchema.Parse(System.IO.File.ReadAllText("MovieIdSchema.json"));
+                        JObject jsonlkpschema = JObject.Parse(JsonString2);
+                        if (jsonlkpschema.IsValid(lkpschema))
+                        {
+                            var MovieLookup = global::MovieId.MovieIds.FromJson(JsonString2);
+                            comedyid.Add(MovieLookup);
+                            ViewData["ComedyLkp"] = comedyid;
+                        }
                     }
-                    ViewData["ComedyLkp"] = comedyid;
+                                                      
                     List<IMDB.MovieImdb> comedyimdb = new List<IMDB.MovieImdb>();
                     foreach (MovieIds movie in comedyid)
                     {
                         //k_3re1w44s
                         //k_vxcfqztc
+                        //k_1gkshhzw
                         string movieid = movie.ImdbId.ToString();
-                        uri = String.Format("https://imdb-api.com/en/API/Title/k_vxcfqztc/{0}", movieid);
+                        uri = String.Format("https://imdb-api.com/en/API/Title/k_1gkshhzw/{0}", movieid);
                         string ImdbString = webClient.DownloadString(uri);
-                        var imdbrating = IMDB.MovieImdb.FromJson(ImdbString);
-                        comedyimdb.Add(imdbrating);
+                        JSchema idmbschema = JSchema.Parse(System.IO.File.ReadAllText("MovieIMDB.json"));
+                        JObject jsonimdbschema = JObject.Parse(ImdbString);
+                        if (jsonimdbschema.IsValid(idmbschema))
+                        {
+                            var imdbrating = IMDB.MovieImdb.FromJson(ImdbString);
+                            comedyimdb.Add(imdbrating);
+                            ViewData["ComedyIMDB"] = comedyimdb;
+
+                        }
                     }
-                    ViewData["ComedyIMDB"] = comedyimdb;
                 }
             }
         }
