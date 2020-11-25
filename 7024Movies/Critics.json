@@ -1,0 +1,36 @@
+﻿{
+  "critics": {
+    "criticName": [
+
+      {
+        "firstName": "Erika",
+        "lastName": "Aviles"
+      },
+      {
+        "firstName": "Devin",
+        "lastName": "Lally"
+      },
+      {
+        "firstName": "Joe",
+        "lastName": "Ross"
+      }
+      ],
+    "favoriteGenre": [
+      {
+        "genre1": "Comedy"
+      }
+    ],
+      "favoriteMovie":"It",
+      "phoneNumbers":
+      [
+        {
+          "type": "home",
+          "number": "5136635524"
+        }
+      ],
+      "publicationName":
+      "Movies Pro"
+  }
+}
+
+
