@@ -1,0 +1,46 @@
+﻿[
+  {
+    "id": "0001",
+    "favoritegenre": "horror",
+    "criticName": [
+      {
+        "firstName": "Erika",
+        "lastName": "Aviles"
+      }
+    ],
+    "moviereviewed": "It",
+    "review": "Did not like it as much as the 90's version"
+  },
+
+
+
+  {
+    "id": "0002",
+    "favoritegenre": "horror",
+    "criticName": [
+      {
+        "firstName": "Devin",
+        "lastName": "Lally"
+      }
+    ],
+    "moviereviewed": "It",
+    "review": "Good movie but nothing special"
+  },
+
+
+
+  {
+    "id": "0003",
+    "favoritegenre": "horror",
+    "criticName": [
+      {
+        "firstName": "Joseph",
+        "lastName": "Ross"
+      }
+    ],
+    "moviereviewed": "It",
+    "review": "Loved it!"
+  }
+]
+
+
