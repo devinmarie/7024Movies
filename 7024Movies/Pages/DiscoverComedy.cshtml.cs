@@ -51,11 +51,8 @@ namespace _7024Movies.Pages
                     List<IMDB.MovieImdb> comedyimdb = new List<IMDB.MovieImdb>();
                     foreach (MovieIds movie in comedyid)
                     {
-                        //k_3re1w44s
-                        //k_vxcfqztc
-                        //k_1gkshhzw
                         string movieid = movie.ImdbId.ToString();
-                        uri = String.Format("https://imdb-api.com/en/API/Title/k_1gkshhzw/{0}", movieid);
+                        uri = String.Format("https://imdb-api.com/en/API/Title/k_buqc8l37/{0}", movieid);
                         string ImdbString = webClient.DownloadString(uri);
                         JSchema idmbschema = JSchema.Parse(System.IO.File.ReadAllText("MovieIMDB.json"));
                         JObject jsonimdbschema = JObject.Parse(ImdbString);
