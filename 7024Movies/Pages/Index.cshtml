@@ -2,6 +2,7 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    var Reviews = (CriticsReviews.CriticsReview[])ViewData["Reviews"];
 }
 
 <body>
@@ -26,36 +27,27 @@
             guarenteed worthy films to watch when you have had enough of endless movie scrolling. Our site is built by
             the public and favflick contributors who choose to put their rating into the mix as well!
         </p>
+        <h4>Here are a few thoughts from our trained critics!</h4>
+        <table class="table padbottom">
+            <thead>
+                <tr>
+                    <th>Movie</th>
+                    <th>Review</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (CriticsReviews.CriticsReview review in Reviews)
+                    {
+                        <tr>
+                            <td>@review.Moviereviewed</td>
+                            <td>@review.Review</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
         <h2 class="">We are constantly growing our genres, so check back for more genre options as we expand!</h2>
         <img alt="people watching tv" class="img-fluid" width="400" src="https://www.pinclipart.com/picdir/big/322-3224873_watch-clipart-family-tv-person-watching-tv-vector.png" />
     </div>
 </body>
-
-
-<div class="text-center">
-    <hi class="display-4"> What the critics are saying...</hi>
-    <hr />
-    <table border="1" width="90%">
-        <tr>
-         <th>Critics Name</th>
-         <th>Movie</th>
-           <th>Review</th>
-        </tr>
-        
-         <tr>
-           <td>@</td>
-           <td>@critics.moviereviewed</td>
-           <td>@critics.review</td>
-
-         </tr>
-
-           }
-
-        }
-
-
-    </table>
-
-
-
-</div>

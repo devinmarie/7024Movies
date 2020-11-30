@@ -26,10 +26,9 @@ namespace _7024Movies.Pages
             using (var webClient = new WebClient())
             {
 
-                string jsonString = webClient.DownloadString("https://www.devinlally.com/uploads/6/0/5/4/60548821/critics.json");
-                JSchema schema = JSchema.Parse(System.IO.File.ReadAllText("Critics.json"));
-                JArray jsonObject = JArray.Parse(jsonString);
-                IList<string> validationEvents = new List<string>();
+                string CriticJson = webClient.DownloadString("https://www.devinlally.com/uploads/6/0/5/4/60548821/critics.json");
+                CriticsReviews.CriticsReview[] Reviews = CriticsReviews.CriticsReview.FromJson(CriticJson);
+                ViewData["Reviews"] = Reviews;
             }
         }
     }

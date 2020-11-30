@@ -18,19 +18,21 @@ namespace _7024Movies.Pages
         {
             using (var webClient = new WebClient())
             {
-                string MovieReviews = webClient.DownloadString("https://api.themoviedb.org/3/search/movie?api_key=a852a3b3771672da86800503084b853b&language=en-US&sort_by=popularity.desc&query=Soccer&page=1&include_adult=false");
-                var results = SearchResults.FromJson(MovieReviews);
-                var results2 = results.Results;
-                ViewData["SoccerResults"] = results2;
+                string SoccerReviews = webClient.DownloadString("https://api.themoviedb.org/3/search/movie?api_key=a852a3b3771672da86800503084b853b&language=en-US&sort_by=popularity.desc&query=Soccer&page=1&include_adult=false");
+                var SoccerJson = SearchResults.FromJson(SoccerReviews);
+                var SoccerResults = SoccerJson.Results;
+                ViewData["SoccerResults"] = SoccerResults;
 
-                DateTime dateTime = DateTime.UtcNow.Date;
-                string currentdate = dateTime.ToString("yyyy-MM-dd");
-                //string soccerstring = String.Format("http://api.sportsdata.io/v3/soccer/scores/json/GamesByDate/{0}?key=bc49021bad1943008414c5a75e665961", currentdate);
-                ViewData["currentdate"] = currentdate;
-                //SoccerGame.SoccerGames[] Game = SoccerGame.SoccerGames.FromJson(soccerstring);
-                //ViewData["SoccerGames"] = Game;
+                string BeckhamReviews = webClient.DownloadString("https://api.themoviedb.org/3/search/movie?api_key=a852a3b3771672da86800503084b853b&language=en-US&sort_by=popularity.desc&query=Beckham&page=1&include_adult=false");
+                var BeckhamJson = SearchResults.FromJson(BeckhamReviews);
+                var BeckhamResults = BeckhamJson.Results;
+                ViewData["BeckhamResults"] = BeckhamResults;
+
+                string PlayerJson = webClient.DownloadString("https://api.sportsdata.io/v3/soccer/scores/json/MembershipsByCompetition/EPL?key=bc49021bad1943008414c5a75e665961");
+                QuickType.PlayerInfo[] PlayerInfo = QuickType.PlayerInfo.FromJson(PlayerJson);
+                ViewData["PlayerInfo"] = PlayerInfo;
+
             }
-
         }
     }
 }
