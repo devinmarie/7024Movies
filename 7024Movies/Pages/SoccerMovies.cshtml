@@ -2,22 +2,17 @@
 @model _7024Movies.Pages.SoccerMoviesModel
 @{
     var results = (_7024Movies.Result[])ViewData["SoccerResults"];
-    //SoccerGame.SoccerGames[] games = (SoccerGame.SoccerGames[])ViewData["SoccerGames"];
-    string cdate = (string)ViewData["currentdate"];
+    var beckhams = (_7024Movies.Result[])ViewData["BeckhamResults"];
+    var players = (QuickType.PlayerInfo[])ViewData["PlayerInfo"];
 }
 
 <body>
     <div class="row padbottom">
-        <h1 class="center">Top Soccer Movies</h1>
-    </div>
-    <div>
-        @{
-            <h2>@cdate</h2>
-        }
+        <h1 class="center">Soccer Movie Options</h1>
     </div>
     <div class="row padbottom">
         @{
-            foreach (_7024Movies.Result result in results.Take(16))
+            foreach (_7024Movies.Result result in results.Take(20))
             {
                 <div class="card text-center" style="width: 15rem;">
                     <div class="card-body">
@@ -32,53 +27,52 @@
             }
         }
     </div>
-    <!--
     <div class="row padbottom">
-        <table>
+        <h1 class="center">David Beckham Movies</h1>
+    </div>
+    <div class="row padbottom">
+        @{
+            foreach (_7024Movies.Result beckham in beckhams)
+            {
+                <div class="card text-center" style="width: 15rem;">
+                    <div class="card-body">
+                        <h3 class="card-title">@beckham.Title</h3>
+                        <p class="card-text">@beckham.ReleaseDate</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Popularity Score: @beckham.Popularity</li>
+                        <li class="list-group-item">Vote Average: @beckham.VoteAverage</li>
+                    </ul>
+                </div>
+            }
+        }
+    </div>
+    <div class="row padbottom text-center">
+        <h1 class="center">English Soccer Player Information</h1>
+        <table class="table">
             <thead>
                 <tr>
-                    <td>Match Time</td>
-                    <td>Home Team</td>
-                    <td>Away Team</td>
-                    <td>Current Clock</td>
-                    <td>Home Team Score</td>
-                    <td>Away Team Score</td>
-                    <td>Winner</td>
+                    <th>Player Name</th>
+                    <th>Team Name</th>
+                    <th>Team Area</th>
+                    <th>Start Date</th>
                 </tr>
             </thead>
-            @{/*
-                foreach (SoccerGame.SoccerGames game in games)
-                {
-                    if (game.HomeTeamName is null)
+            <tbody>
+                @{
+                    foreach (QuickType.PlayerInfo player in players)
                     {
                         <tr>
-                            <td>@game.DateTime</td>
-                            <td>@game.HomeTeamName</td>
-                            <td>@game.AwayTeamName</td>
-                            <td>@game.Clock</td>
-                            <td>@game.HomeTeamScore</td>
-                            <td>@game.AwayTeamScore</td>
-                            <td>@game.Winner</td>
+                            <td>@player.PlayerName</td>
+                            <td>@player.TeamName</td>
+                            <td>@player.TeamArea</td>
+                            <td>@player.StartDate</td>
                         </tr>
                     }
-                    else
-                    {
-                        <tr>
-                            <td>No Games Today</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                        </tr>
-                    }
-
-                } */
-            }
+                }
+            </tbody>
         </table>
     </div>
-    -->
 </body>
 
 

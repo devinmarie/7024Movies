@@ -32,8 +32,10 @@ namespace _7024Movies.Pages
                 // string responseBody = await client.GetStringAsync(uri);
                 MovieSearchResults = SearchResults.FromJson(responseBody);
             }
-            catch
+            catch (HttpRequestException e)
             {
+                Console.WriteLine("\nException Caught!");
+                Console.WriteLine("Message :{0}", e.Message);
             }
         }
         public IActionResult OnGetNextPage(int id)
